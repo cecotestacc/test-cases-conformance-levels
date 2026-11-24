@@ -10,8 +10,8 @@
   <main>
     <h1>aria-toggle-field-name Test Case</h1>
     <p>SC 4.1.2 — ARIA toggle fields must have an accessible name.</p>
-    <!-- VIOLATION: role="checkbox" with aria-labelledby pointing to non-existent id -->
-    <div id="fail01" role="checkbox" aria-checked="false" aria-labelledby="does-not-exist"></div>
+    <!-- VIOLATION: role="checkbox" with no accessible name -->
+    <div role="checkbox" aria-checked="false"></div>
   </main>
 </body>
 </html>

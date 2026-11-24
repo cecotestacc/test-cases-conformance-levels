@@ -11,7 +11,7 @@
     <h1>no-autoplay-audio Test Case</h1>
     <p>SC 1.4.2 — <code>&lt;video&gt;</code> or <code>&lt;audio&gt;</code> elements must not play automatically.</p>
     <!-- VIOLATION: audio with autoplay and no muted attribute (actual audio > 3s) -->
-    <audio autoplay controls>
+    <audio autoplay controls style="width: 100%; max-width: 100%;">
       <source src="https://act-rules.github.io/test-assets/moon-audio/moon-speech.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
