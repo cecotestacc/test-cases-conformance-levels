@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aria-deprecated-role — Deprecated ARIA roles must not be used</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<body>
+  <main>
+    <h1>aria-deprecated-role Test Case</h1>
+    <p>SC 4.1.2 — Deprecated ARIA roles must not be used.</p>
+    <!-- VIOLATION: role="directory" is a deprecated ARIA role -->
+    I love <span onclick="location.href='#'" role="directory">ACT rules</span>.
+  </main>
+</body>
+</html>

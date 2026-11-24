@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>duplicate-id-aria — IDs used in ARIA and labels must be unique</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<body>
+  <main>
+    <h1>duplicate-id-aria Test Case</h1>
+    <p>SC 4.1.2 — IDs used in ARIA and labels must be unique.</p>
+    <!-- VIOLATION: Two inputs share id="myinput", first referenced by a label for attribute -->
+    <label for="myinput">Name</label>
+    <input type="text" id="myinput" aria-label="Name">
+    <input type="email" id="myinput" aria-label="Email">
+  </main>
+</body>
+</html>

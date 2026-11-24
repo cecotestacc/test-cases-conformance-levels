@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>list — ul and ol must only directly contain li, script or template elements</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<body>
+  <main>
+    <h1>list Test Case</h1>
+    <p>SC 1.3.1 — <code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code> must only directly contain <code>&lt;li&gt;</code>, <code>&lt;script&gt;</code> or <code>&lt;template&gt;</code> elements.</p>
+    <!-- VIOLATION: <ul> directly contains an <area> element which is not permitted -->
+    <ul>
+      <li>Raindrops on roses</li>
+      <area>r</area>
+    </ul>
+  </main>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aria-valid-attr-value — ARIA attributes must conform to valid values</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<body>
+  <main>
+    <h1>aria-valid-attr-value Test Case</h1>
+    <p>SC 4.1.2 — ARIA attributes must conform to valid values.</p>
+    <!-- VIOLATION: aria-required="undefined" is not a valid boolean value -->
+    <div role="textbox" aria-required="undefined" aria-label="A required textbox"></div>
+  </main>
+</body>
+</html>

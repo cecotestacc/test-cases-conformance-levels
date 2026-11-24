@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>color-contrast-enhanced — Elements must meet enhanced color contrast ratio thresholds</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }
+    /* #666666 on white = ~5.74:1 — passes AA (4.5:1) but fails AAA enhanced (7:1) */
+    .medium-contrast { color: #666666; background: #fff; font-size: 1rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>color-contrast-enhanced Test Case</h1>
+    <p>SC 1.4.6 — Elements must meet enhanced color contrast ratio thresholds (7:1 for normal text).</p>
+    <p class="medium-contrast">This text has ~5.74:1 contrast — passes AA (4.5:1) but fails AAA enhanced threshold (7:1).</p>
+  </main>
+</body>
+</html>

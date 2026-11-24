@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>object-alt — object elements must have alternative text</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<body>
+  <main>
+    <h1>object-alt Test Case</h1>
+    <p>SC 1.1.1 — <code>&lt;object&gt;</code> elements must have alternative text.</p>
+    <!-- VIOLATION: <object> with no alternative text content -->
+    <object data="data:text/html,<p>Object content</p>" type="text/html" width="200" height="100"></object>
+  </main>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aria-tooltip-name — ARIA tooltip nodes must have an accessible name</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<body>
+  <main>
+    <h1>aria-tooltip-name Test Case</h1>
+    <p>SC 4.1.2 — ARIA tooltip nodes must have an accessible name.</p>
+    <!-- VIOLATION: role="tooltip" with no accessible name (empty content) -->
+    <div role="tooltip" id="tip"></div>
+    <button aria-describedby="tip">Hover me</button>
+  </main>
+</body>
+</html>

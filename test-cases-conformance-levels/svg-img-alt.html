@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>svg-img-alt — SVG elements with img role must have alternative text</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<body>
+  <main>
+    <h1>svg-img-alt Test Case</h1>
+    <p>SC 1.1.1 — <code>&lt;svg&gt;</code> elements with an img or image role must have alternative text.</p>
+    <!-- VIOLATION: SVG with role="img" but no aria-label or <title> -->
+    <svg role="img" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="40" fill="blue"/>
+    </svg>
+  </main>
+</body>
+</html>

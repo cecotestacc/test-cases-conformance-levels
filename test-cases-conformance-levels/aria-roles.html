@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aria-roles — ARIA roles used must conform to valid values</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }
+    .link { color: #0000ee; text-decoration: underline; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>aria-roles Test Case</h1>
+    <p>SC 4.1.2 — ARIA roles used must conform to valid values.</p>
+    <!-- VIOLATION: "lnik" is not a valid ARIA role (typo of "link") -->
+    I love <span class="link" onclick="location.href='#'" role="lnik">ACT rules</span>.
+  </main>
+</body>
+</html>

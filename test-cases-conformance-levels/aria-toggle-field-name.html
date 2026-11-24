@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aria-toggle-field-name — ARIA toggle fields must have an accessible name</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<body>
+  <main>
+    <h1>aria-toggle-field-name Test Case</h1>
+    <p>SC 4.1.2 — ARIA toggle fields must have an accessible name.</p>
+    <!-- VIOLATION: role="checkbox" with aria-labelledby pointing to non-existent id -->
+    <div id="fail01" role="checkbox" aria-checked="false" aria-labelledby="does-not-exist"></div>
+  </main>
+</body>
+</html>

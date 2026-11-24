@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aria-prohibited-attr — Elements must only use permitted ARIA attributes</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<body>
+  <main>
+    <h1>aria-prohibited-attr Test Case</h1>
+    <p>SC 4.1.2 — Elements must only use permitted ARIA attributes.</p>
+    <!-- VIOLATION: aria-labelledby references an aria-hidden element, making the name prohibited/unavailable -->
+    <div aria-labelledby="h2"></div>
+    <h2 id="h2" aria-hidden="true">Hello world</h2>
+  </main>
+</body>
+</html>

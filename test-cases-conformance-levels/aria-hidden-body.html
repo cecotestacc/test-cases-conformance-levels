@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aria-hidden-body — aria-hidden must not be on the document body</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<!-- VIOLATION: aria-hidden="true" on the body element (SC 1.3.1 / 4.1.2) -->
+<!-- NOTE: aria-hidden on body inherently causes secondary best-practice violations
+     (landmark-one-main, page-has-heading-one) because all content becomes hidden.
+     The primary WCAG violation is aria-hidden-body. -->
+<body aria-hidden="true">
+  <main>
+    <h1>aria-hidden-body Test Case</h1>
+    <p>SC 1.3.1 / 4.1.2 — aria-hidden="true" must not be present on the document body.</p>
+  </main>
+</body>
+</html>

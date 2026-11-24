@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nested-interactive — Interactive controls must not be nested</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<body>
+  <main>
+    <h1>nested-interactive Test Case</h1>
+    <p>SC 4.1.2 — Interactive controls must not be nested.</p>
+    <!-- VIOLATION: anchor nested inside a button -->
+    <button>
+      Save
+      <a href="#">More options</a>
+    </button>
+  </main>
+</body>
+</html>

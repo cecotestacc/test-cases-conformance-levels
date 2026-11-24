@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aria-valid-attr — ARIA attributes must conform to valid names</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<body>
+  <main>
+    <h1>aria-valid-attr Test Case</h1>
+    <p>SC 4.1.2 — ARIA attributes must conform to valid names.</p>
+    <!-- VIOLATION: aria-labelled is not a valid ARIA attribute (typo of aria-labelledby) -->
+    <div contenteditable role="searchbox" aria-label="Search" aria-labelled="label" aria-placeholder="MM-DD-YYYY">
+      01-01-2019
+    </div>
+  </main>
+</body>
+</html>

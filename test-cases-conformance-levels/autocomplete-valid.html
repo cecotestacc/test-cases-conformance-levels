@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>autocomplete-valid — autocomplete attribute must be used correctly</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<body>
+  <main>
+    <h1>autocomplete-valid Test Case</h1>
+    <p>SC 1.3.5 — autocomplete attribute must be used correctly.</p>
+    <!-- VIOLATION: "badname" is not a valid autocomplete token -->
+    <label>Username <input autocomplete="badname"></label>
+  </main>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>video-caption — video elements must have captions</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<body>
+  <main>
+    <h1>video-caption Test Case</h1>
+    <p>SC 1.2.2 — <code>&lt;video&gt;</code> elements must have captions.</p>
+    <!-- VIOLATION: <video autoplay> with no <track kind="captions"> -->
+    <video autoplay muted controls width="320" height="180">
+      <source src="https://act-rules.github.io/test-assets/rabbit-video/video.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
+  </main>
+</body>
+</html>

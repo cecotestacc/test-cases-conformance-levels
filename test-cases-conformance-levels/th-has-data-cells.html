@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>th-has-data-cells — Table headers in a data table must refer to data cells</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<body>
+  <main>
+    <h1>th-has-data-cells Test Case</h1>
+    <p>SC 1.3.1 — Table headers in a data table must refer to data cells.</p>
+    <!-- VIOLATION: "Value" header has no corresponding data cell in the table body -->
+    <table>
+      <thead>
+        <tr>
+          <th>Rate</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>15%</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>

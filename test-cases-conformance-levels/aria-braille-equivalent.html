@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aria-braille-equivalent — aria-braille attributes must have a non-braille equivalent</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<body>
+  <main>
+    <h1>aria-braille-equivalent Test Case</h1>
+    <p>SC 4.1.2 — aria-braille attributes must have a non-braille equivalent.</p>
+    <!-- VIOLATION: aria-brailleroledescription without the required aria-roledescription equivalent -->
+    <div role="article" id="slide" aria-labelledby="slideheading" aria-brailleroledescription="sld">
+      <h2 id="slideheading">My vacation in Rome</h2>
+    </div>
+  </main>
+</body>
+</html>

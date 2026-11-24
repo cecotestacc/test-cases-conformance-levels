@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>role-img-alt — role=img elements must have alternative text</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<body>
+  <main>
+    <h1>role-img-alt Test Case</h1>
+    <p>SC 1.1.1 — <code>[role="img"]</code> and <code>[role="image"]</code> elements must have alternative text.</p>
+    <!-- VIOLATION: role="img" with no aria-label or aria-labelledby -->
+    <div role="img">
+      <span>★★★★☆</span>
+    </div>
+  </main>
+</body>
+</html>

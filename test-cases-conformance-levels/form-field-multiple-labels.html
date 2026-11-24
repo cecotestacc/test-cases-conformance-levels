@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form-field-multiple-labels — Form field must not have multiple label elements</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<body>
+  <main>
+    <h1>form-field-multiple-labels Test Case</h1>
+    <p>SC 3.3.2 — Form field must not have multiple label elements.</p>
+    <!-- VIOLATION: input wrapped in a label AND also referenced by a second label via for -->
+    <label for="myfield">First label</label>
+    <label>
+      Second label
+      <input id="myfield" type="text">
+    </label>
+  </main>
+</body>
+</html>

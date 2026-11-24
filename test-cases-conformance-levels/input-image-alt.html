@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input-image-alt — Image buttons must have alternative text</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<body>
+  <main>
+    <h1>input-image-alt Test Case</h1>
+    <p>SC 1.1.1 / 4.1.2 — Image buttons must have alternative text.</p>
+    <!-- VIOLATION: input type="image" missing alt attribute -->
+    <input type="image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+  </main>
+</body>
+</html>

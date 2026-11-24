@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>frame-title — Frames must have an accessible name</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<body>
+  <main>
+    <h1>frame-title Test Case</h1>
+    <p>SC 4.1.2 — Frames must have an accessible name.</p>
+    <!-- VIOLATION: iframe with no title, aria-label, or aria-labelledby -->
+    <iframe src="data:text/html,<p>Some frame content</p>" width="300" height="100"></iframe>
+  </main>
+</body>
+</html>

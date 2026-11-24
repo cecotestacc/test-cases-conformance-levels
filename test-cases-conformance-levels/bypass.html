@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bypass — Page must have means to bypass repeated blocks</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<!-- VIOLATION: No skip link, no landmark regions, no headings — all three bypass mechanisms absent.
+     NOTE: bypass inherently also causes landmark-one-main and page-has-heading-one
+     (best-practice) to fire, as these mechanisms are what constitutes a bypass. -->
+<body>
+  <a href="#">Nav link 1</a>
+  <a href="#">Nav link 2</a>
+  <a href="#">Nav link 3</a>
+  <p>SC 2.4.1 — Page must have means to bypass repeated blocks of content.</p>
+  <p>This page has no skip link, no landmark regions, and no headings.</p>
+</body>
+</html>

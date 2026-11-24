@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>avoid-inline-spacing — Inline text spacing must be adjustable with custom stylesheets</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }
+    p { font-size: 20px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>avoid-inline-spacing Test Case</h1>
+    <p>SC 1.4.12 — Inline text spacing must be adjustable with custom stylesheets.</p>
+    <!-- VIOLATION: word-spacing set with !important in inline style prevents user override -->
+    <p style="word-spacing: 0.1em !important">
+      The toy brought back fond memories of being lost in the rain forest.
+    </p>
+  </main>
+</body>
+</html>

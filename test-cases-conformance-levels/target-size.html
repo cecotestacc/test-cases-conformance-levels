@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>target-size — All touch targets must be 24px large, or leave sufficient space</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<body>
+  <main>
+    <h1>target-size Test Case</h1>
+    <p>SC 2.5.8 — All touch targets must be 24px large, or leave sufficient space.</p>
+    <!-- VIOLATION: button is too small and directly adjacent to another button with no spacing -->
+    <button id="target">+</button>
+    <button style="margin-left: -10px">Adjacent Target</button>
+  </main>
+</body>
+</html>

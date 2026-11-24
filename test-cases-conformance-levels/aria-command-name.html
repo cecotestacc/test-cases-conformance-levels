@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aria-command-name — ARIA commands must have an accessible name</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<body>
+  <main>
+    <h1>aria-command-name Test Case</h1>
+    <p>SC 4.1.2 — ARIA commands (button, link, menuitem) must have an accessible name.</p>
+    <!-- VIOLATION: role="button" with no accessible name -->
+    <div role="button" tabindex="0"></div>
+  </main>
+</body>
+</html>

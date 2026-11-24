@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>link-in-text-block — Links must be distinguishable without relying on color</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<body>
+  <main>
+    <h1>link-in-text-block Test Case</h1>
+    <p>SC 1.4.1 — Links must be distinguishable without relying on color.</p>
+    <!-- VIOLATION: link (#056dae) has no underline and contrast with surrounding text (#333) is below 3:1 -->
+    <p style="color: #333; font-size: 12px;">
+      <span>
+        Here is <a style="color: #056dae; text-decoration: none;" href="https://example.com">a link</a> surrounded by other text and does not have sufficient color contrast.
+      </span>
+    </p>
+  </main>
+</body>
+</html>
