@@ -24,7 +24,7 @@ Rules marked `[not supported]` do **not** get a file here.
 
 ```
 test-cases-conformance-levels/
-  {rule-id}.html          ← one file per axe-core rule
+  {rule-id}.html          ← one file per rule
   base-accessible.html    ← fully accessible reference page (0 violations)
 ```
 
@@ -34,19 +34,24 @@ Flat structure — no subfolders.
 
 ## Filename rules
 
-- **Filename = axe-core rule ID exactly.** e.g. `image-alt.html`, `color-contrast.html`.
+- **Filename = rule ID exactly.** e.g. `image-alt.html`, `color-contrast.html`.
 - One file per rule. Do not create multiple files for the same rule.
 - Do not create files for `[not supported]` rules.
 
 ---
 
-## Test case requirements
+## Two kinds of rules
 
-- **Exactly 1 issue per file.** The axe-core scan must report either 1 violation or 1 incomplete (needs-review) result — no more, no less.
-- **Clean baseline.** Start from `base-accessible.html`. Add only the minimal markup needed to trigger the target rule.
-- **No secondary violations.** If a pattern causes cascading issues, adjust the markup to suppress them (e.g. add `aria-label` to suppress a name violation when testing a different rule).
-- **[needs review] rules.** Rules marked `[needs review]` in the mapping file always return "incomplete" rather than "violation" in axe-core by design. Test cases for these rules are still required; they must trigger the incomplete state.
+### Standard axe-core rules
+Detected statically by axe-core. Test case must produce **exactly 1 issue** (1 violation or 1 incomplete) when scanned with axe-core.
+
+- **Clean baseline.** Start from `base-accessible.html`. Add only the minimal markup to trigger the target rule.
+- **No secondary violations.** Suppress cascading issues (e.g. add `aria-label` to avoid a name violation when testing a different rule).
+- **[needs review] rules** always return "incomplete" rather than "violation" in axe-core by design — still required, must trigger the incomplete state.
 - **AAA and WCAG 2.2 rules.** `color-contrast-enhanced`, `meta-refresh-no-exceptions`, and `target-size` only fire when invoked with `--rules <rule-id>`. This is expected.
+
+### [behaviour] rules
+Detected by QualiBooth's own behaviour scanner (hover, focus, screenshots, Chrome a11y tree) — axe-core cannot detect them. The HTML must clearly demonstrate the violation scenario so QualiBooth picks it up. Do **not** verify with axe-core. axe-core reporting 0 violations on a behaviour rule file is expected and correct.
 
 ---
 
