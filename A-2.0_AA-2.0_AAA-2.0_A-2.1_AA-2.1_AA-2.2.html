@@ -10,6 +10,17 @@
     .fail-aa-2-0 { color: #aaa; }
     /* AAA+2.0: #666 on #fff ≈ 5.74:1 — passes SC 1.4.3 but fails SC 1.4.6 enhanced (7:1) */
     .fail-aaa-2-0 { color: #666; }
+    /* AA+2.2: pseudo-element covers left 60% of the button including its focus ring.
+       ::after is not a DOM node so focus-obscured reports only 1 node (the button). */
+    .focus-obs { position: relative; display: inline-block; }
+    .focus-obs::after {
+      content: '';
+      position: absolute;
+      top: -3px; left: -3px; bottom: -3px;
+      width: 60%;
+      background: #e0e0e0;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
@@ -43,12 +54,9 @@
     <label>Username <input type="text" autocomplete="badname"></label>
 
     <!-- WCAG 2.2 — Level AA: focus-obscured (SC 2.4.11) -->
-    <!-- VIOLATION: a positioned overlay covers 60% of the button; when focused the focus indicator
-         is partially hidden. Only 1 node fires — focus-obscured fires as SC 2.4.11 (WCAG 2.2 AA). -->
-    <div style="position:relative;display:inline-block;">
-      <button>Settings</button>
-      <div style="position:absolute;top:0;left:0;width:60%;height:100%;background:#e0e0e0;" aria-hidden="true"></div>
-    </div>
+    <!-- VIOLATION: ::after pseudo-element covers 60% of button including its focus ring.
+         ::after is not a DOM node so focus-obscured reports only 1 node (the button). -->
+    <button class="focus-obs">Settings</button>
   </main>
 </body>
 </html>
