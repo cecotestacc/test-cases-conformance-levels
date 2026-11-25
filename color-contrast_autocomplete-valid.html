@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>color-contrast + autocomplete-valid</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }
+    /* SC 1.4.3 violation: #aaa on #fff ≈ 2.32:1, below 4.5:1 minimum */
+    .low-contrast { color: #aaa; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>color-contrast + autocomplete-valid</h1>
+
+    <!-- VIOLATION SC 1.4.3 (color-contrast): #aaa on #fff ≈ 2.32:1, below 4.5:1 -->
+    <p class="low-contrast">This text fails minimum color contrast (SC 1.4.3).</p>
+
+    <!-- VIOLATION SC 1.3.5 (autocomplete-valid): "badname" is not a valid autocomplete token -->
+    <label>Username <input type="text" autocomplete="badname"></label>
+  </main>
+</body>
+</html>

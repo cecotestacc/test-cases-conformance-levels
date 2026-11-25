@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>image-alt + color-contrast</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }
+    /* SC 1.4.3 violation: #aaa on #fff ≈ 2.32:1, below 4.5:1 minimum */
+    .low-contrast { color: #aaa; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>image-alt + color-contrast</h1>
+
+    <!-- VIOLATION SC 1.1.1 (image-alt): img missing alt attribute -->
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="80" height="80">
+
+    <!-- VIOLATION SC 1.4.3 (color-contrast): #aaa on #fff ≈ 2.32:1, below 4.5:1 -->
+    <p class="low-contrast">This text fails minimum color contrast (SC 1.4.3).</p>
+  </main>
+</body>
+</html>
