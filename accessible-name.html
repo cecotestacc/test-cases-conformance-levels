@@ -3,20 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>accessible-name — UI components must have an accessible name</title>
+  <title>accessible-name — Accessible name must not duplicate the description</title>
   <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
 </head>
 <body>
   <main>
     <h1>accessible-name Test Case</h1>
-    <p>SC 4.1.2 — Name, Role, Value — user interface components must have a programmatically determined name.</p>
-    <!-- VIOLATION: plain text nodes used as labels — not <label> elements and not referenced via aria-labelledby -->
+    <p>SC 4.1.2 — Name, Role, Value — the accessible name must not be duplicated by its description.</p>
+    <!-- VIOLATION: aria-label and aria-describedby resolve to identical text ("Submit form").
+         Chrome's accessible-name computation reports this as redundant — the description
+         adds no information beyond the name, violating the accessible-name rule. -->
     <form>
-      <div>First name:</div>
-      <input type="text" id="firstname">
-      <div>Last name:</div>
-      <input type="text" id="lastname">
-      <button type="submit">Submit</button>
+      <label for="q">Search query</label>
+      <input type="text" id="q" name="q">
+      <button type="submit"
+              aria-label="Submit form"
+              aria-describedby="btn-desc">Submit form</button>
+      <span id="btn-desc" hidden>Submit form</span>
     </form>
   </main>
 </body>
