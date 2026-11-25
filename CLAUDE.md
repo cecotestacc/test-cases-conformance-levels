@@ -14,7 +14,7 @@ The authoritative rule list is at:
 C:\Users\TsvetomirTsanov\Desktop\QB-ScheduledScanning\axe-and-behaviour-rules-to-sc-and-levels.md
 ```
 
-Rules marked `[not supported]` or `[behaviour]` do **not** get a file here.
+Rules marked `[not supported]` do **not** get a file here. Rules marked `[behaviour]` **do** get a file here.
 
 ---
 
@@ -34,7 +34,7 @@ Flat structure — no subfolders.
 
 - **Filename = axe-core rule ID exactly.** e.g. `image-alt.html`, `color-contrast.html`.
 - One file per rule. Do not create multiple files for the same rule.
-- Do not create files for `[not supported]` or `[behaviour]` rules.
+- Do not create files for `[not supported]` rules. `[behaviour]` rules do get a file.
 
 ---
 
