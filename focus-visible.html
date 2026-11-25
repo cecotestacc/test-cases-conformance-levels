@@ -6,19 +6,33 @@
   <title>focus-visible — Focus indicator must be visible</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }
-    /* VIOLATION: all focus outlines suppressed — no focus indicator is ever visible */
-    *:focus, *:focus-visible { outline: none !important; box-shadow: none !important; }
+    .btn {
+      background: #e8e8e8;
+      color: #333;
+      border: 1px solid #aaa;
+      padding: 8px 18px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    /* VIOLATION: focus style is identical to unfocused — no visible focus indicator */
+    .btn:focus,
+    .btn:focus-visible {
+      background: #e8e8e8;
+      color: #333;
+      border: 1px solid #aaa;
+      outline: none !important;
+      box-shadow: none !important;
+      -webkit-tap-highlight-color: transparent;
+    }
   </style>
 </head>
 <body>
   <main>
     <h1>focus-visible Test Case</h1>
     <p>SC 2.4.7 — Focus Visible — any keyboard operable interface must have a visible focus indicator.</p>
-    <form>
-      <label for="q">Search</label>
-      <input type="text" id="q" name="q">
-      <button type="submit">Search</button>
-    </form>
+    <!-- VIOLATION: button focus style is identical to unfocused state — no visible change on focus -->
+    <button type="button" class="btn">Subscribe</button>
   </main>
 </body>
 </html>
