@@ -42,11 +42,13 @@
     <!-- VIOLATION: "badname" is not a valid autocomplete token -->
     <label>Username <input type="text" autocomplete="badname"></label>
 
-    <!-- WCAG 2.2 — Level AA: target-size (SC 2.5.8) -->
-    <!-- VIOLATION: naturally-sized "+" button is < 24px wide; negative margin puts the large adjacent
-         button inside its offset zone. Small button is later in DOM (higher z-index) so it is not
-         covered when focused — focus-obscured does not fire. -->
-    <button>Show all results</button><button style="margin-left:-10px;padding:0;" aria-label="+ Expand">+</button>
+    <!-- WCAG 2.2 — Level AA: focus-obscured (SC 2.4.11) -->
+    <!-- VIOLATION: a positioned overlay covers 60% of the button; when focused the focus indicator
+         is partially hidden. Only 1 node fires — focus-obscured fires as SC 2.4.11 (WCAG 2.2 AA). -->
+    <div style="position:relative;display:inline-block;">
+      <button>Settings</button>
+      <div style="position:absolute;top:0;left:0;width:60%;height:100%;background:#e0e0e0;" aria-hidden="true"></div>
+    </div>
   </main>
 </body>
 </html>
