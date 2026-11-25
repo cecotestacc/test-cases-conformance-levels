@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hover-focus-content — Content on hover or focus</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }
+    .tooltip-host { position: relative; display: inline-block; }
+    .tooltip-host .tip {
+      display: none;
+      position: absolute;
+      left: 0; top: 1.6em;
+      background: #1e293b; color: #fff;
+      padding: 6px 10px; border-radius: 4px;
+      width: 220px; font-size: 0.85rem; z-index: 10;
+      pointer-events: none;
+    }
+    /* VIOLATION: tooltip triggered only by :hover — :focus does not reveal it */
+    .tooltip-host:hover .tip { display: block; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>hover-focus-content Test Case</h1>
+    <p>SC 1.4.13 — Content on Hover or Focus must be hoverable, dismissible, and persistent.</p>
+    <!-- VIOLATION: tooltip revealed only by CSS :hover; keyboard :focus on the link does not trigger it -->
+    <p>Learn about
+      <span class="tooltip-host">
+        <a href="#wcag" tabindex="0">WCAG 2.2
+          <span class="tip" role="tooltip">Web Content Accessibility Guidelines — the international standard for web accessibility.</span>
+        </a>
+      </span>
+      compliance.
+    </p>
+  </main>
+</body>
+</html>

@@ -3,6 +3,8 @@
 This file is read automatically by Claude Code when working in this folder.
 Follow every rule here when creating or editing test cases.
 
+> **Git repo:** This folder is its own standalone repository — `https://github.com/cecotestacc/test-cases-conformance-levels`. Always commit and push from inside this folder. Do **not** commit these files to the parent repo (`cecotestacc/random`).
+
 ---
 
 ## Purpose
