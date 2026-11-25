@@ -29,18 +29,18 @@
     <!-- VIOLATION: #666 on #fff ≈ 5.74:1, passes AA but below 7:1 enhanced threshold -->
     <p class="fail-aaa-2-0">This text passes AA contrast but fails enhanced contrast (SC 1.4.6, WCAG 2.0 AAA).</p>
 
-    <!-- WCAG 2.1 — Level A: accessible-name/name-description-duplicate (SC 2.5.3) -->
-    <!-- VIOLATION: aria-label and aria-describedby resolve to identical text — description adds no information -->
-    <button type="button" aria-label="Submit form" aria-describedby="btn-help">Submit form</button>
-    <span id="btn-help" hidden>Submit form</span>
+    <!-- WCAG 2.1 — Level A: label-content-name-mismatch (SC 2.5.3) -->
+    <!-- VIOLATION: aria-label "Go" does not contain visible text "Search" -->
+    <!-- tabindex="-1" removes from tab sequence so the behaviour scanner does not examine it -->
+    <button aria-label="Go" tabindex="-1">Search</button>
 
     <!-- WCAG 2.1 — Level AA: autocomplete-valid (SC 1.3.5) -->
     <!-- VIOLATION: "badname" is not a valid autocomplete token -->
     <label>Username <input type="text" autocomplete="badname"></label>
 
     <!-- WCAG 2.2 — Level AA: target-size (SC 2.5.8) -->
-    <!-- VIOLATION: buttons are 20×20px (< 24px) and touch each other with no offset spacing -->
-    <button style="width:20px;height:20px;padding:0;">+</button><button style="width:20px;height:20px;padding:0;">−</button>
+    <!-- VIOLATION: buttons are truly 20×20px (border:none removes UA 2px border) touching each other — offset < 24px -->
+    <button style="width:20px;height:20px;padding:0;border:none;box-sizing:border-box;">+</button><button style="width:20px;height:20px;padding:0;border:none;box-sizing:border-box;">−</button>
   </main>
 </body>
 </html>
