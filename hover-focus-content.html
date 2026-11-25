@@ -10,21 +10,23 @@
     .tooltip-host .tip {
       display: none;
       position: absolute;
-      left: 0; top: 1.6em;
+      left: 0; top: 100%; margin-top: 0; /* flush — no gap so tooltip is hoverable */
       background: #1e293b; color: #fff;
       padding: 6px 10px; border-radius: 4px;
       width: 220px; font-size: 0.85rem; z-index: 10;
-      pointer-events: none;
+      pointer-events: auto; /* hoverable */
     }
-    /* VIOLATION: tooltip triggered only by :hover — :focus does not reveal it */
-    .tooltip-host:hover .tip { display: block; }
+    /* Tooltip appears on both hover and focus — no keyboard/hover-only issue */
+    .tooltip-host:hover .tip,
+    .tooltip-host:focus-within .tip { display: block; }
+    /* VIOLATION: no Escape handler — tooltip cannot be dismissed without moving pointer */
   </style>
 </head>
 <body>
   <main>
     <h1>hover-focus-content Test Case</h1>
     <p>SC 1.4.13 — Content on Hover or Focus must be hoverable, dismissible, and persistent.</p>
-    <!-- VIOLATION: tooltip revealed only by CSS :hover; keyboard :focus on the link does not trigger it -->
+    <!-- VIOLATION: tooltip is not dismissible by Escape key (SC 1.4.13 / not-dismissible) -->
     <p>Learn about
       <span class="tooltip-host">
         <a href="#wcag" tabindex="0">WCAG 2.2
