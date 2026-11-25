@@ -30,17 +30,23 @@
     <p class="fail-aaa-2-0">This text passes AA contrast but fails enhanced contrast (SC 1.4.6, WCAG 2.0 AAA).</p>
 
     <!-- WCAG 2.1 — Level A: label-content-name-mismatch (SC 2.5.3) -->
-    <!-- VIOLATION: aria-label "Go" does not contain visible text "Search" -->
-    <!-- tabindex="-1" removes from tab sequence so the behaviour scanner does not examine it -->
-    <button aria-label="Go" tabindex="-1">Search</button>
+    <!-- VIOLATION: td[role=rowheader] aria-label "Go" does not contain visible text "Search results" -->
+    <!-- role=rowheader is in axe's label-content-name-mismatch list; td is not focusable so the
+         behaviour scanner does not examine it — only the axe rule fires, not the behavioural one -->
+    <table><tr>
+      <td role="rowheader" aria-label="Go">Search results</td>
+      <td>42</td>
+    </tr></table>
 
     <!-- WCAG 2.1 — Level AA: autocomplete-valid (SC 1.3.5) -->
     <!-- VIOLATION: "badname" is not a valid autocomplete token -->
     <label>Username <input type="text" autocomplete="badname"></label>
 
     <!-- WCAG 2.2 — Level AA: target-size (SC 2.5.8) -->
-    <!-- VIOLATION: buttons are truly 20×20px (border:none removes UA 2px border) touching each other — offset < 24px -->
-    <button style="width:20px;height:20px;padding:0;border:none;box-sizing:border-box;">+</button><button style="width:20px;height:20px;padding:0;border:none;box-sizing:border-box;">−</button>
+    <!-- VIOLATION: naturally-sized "+" button is < 24px wide; negative margin puts the large adjacent
+         button inside its offset zone. Small button is later in DOM (higher z-index) so it is not
+         covered when focused — focus-obscured does not fire. -->
+    <button>Show all results</button><button style="margin-left:-10px;padding:0;" aria-label="+ Expand">+</button>
   </main>
 </body>
 </html>
