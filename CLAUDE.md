@@ -3,6 +3,8 @@
 This file is read automatically by Claude Code when working in this folder.
 Follow every rule here when creating or editing test cases.
 
+> **Git repo:** This folder is its own standalone repository — `https://github.com/cecotestacc/test-cases-conformance-levels`. Always commit and push from inside this folder. Do **not** commit these files to the parent repo (`cecotestacc/random`).
+
 ---
 
 ## Purpose
@@ -14,7 +16,7 @@ The authoritative rule list is at:
 C:\Users\TsvetomirTsanov\Desktop\QB-ScheduledScanning\axe-and-behaviour-rules-to-sc-and-levels.md
 ```
 
-Rules marked `[not supported]` do **not** get a file here. Rules marked `[behaviour]` **do** get a file here.
+Rules marked `[not supported]` or `[behaviour]` do **not** get a file here.
 
 ---
 
@@ -34,7 +36,7 @@ Flat structure — no subfolders.
 
 - **Filename = axe-core rule ID exactly.** e.g. `image-alt.html`, `color-contrast.html`.
 - One file per rule. Do not create multiple files for the same rule.
-- Do not create files for `[not supported]` rules. `[behaviour]` rules do get a file.
+- Do not create files for `[not supported]` or `[behaviour]` rules.
 
 ---
 
