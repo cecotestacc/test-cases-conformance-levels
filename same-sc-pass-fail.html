@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Same SC — one rule fails, one passes (SC 1.1.1)</title>
+  <style>body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; color: #000; }</style>
+</head>
+<body>
+  <main>
+    <h1>SC 1.1.1 — image-alt (fail) vs input-image-alt (pass)</h1>
+
+    <!-- VIOLATION: image-alt (SC 1.1.1) — img missing alt attribute -->
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="80" height="80">
+
+    <!-- PASS: input-image-alt (SC 1.1.1) — input[type=image] has alt attribute -->
+    <input type="image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Submit form" width="80" height="80">
+  </main>
+</body>
+</html>
